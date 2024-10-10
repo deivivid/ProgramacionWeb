@@ -1,29 +1,23 @@
-//CLASE 24/09/24
-//NOMBRE: RIVAS GARZA DAVID
+function appendToDisplay(value){
+    document.getElementById('display').value += value;
 
-/*
-Variables:
-*/
+}
 
-let nombre = "Juan";
-const PI = 3.1416;
-var edad = 25;
+function clearDisplay(){
+    document.getElementById('display').value = '';
 
-alert('Hola, clase de 5IV7 desde el JS externo');
+}
 
-//operadores
+function deleteLast(){
+    let displayValue = document.getElementById('display').value;
+    document.getElementById('display').value = displayValue.slice(0, -1);
+}
 
-let a = 5;
-let b = 3;
-let suma = a+b;
-let resta = a-b;
-let multiplicacion = a*b;
-let division = a/b;
-
-//operadores de comparación
-
-a>b; //T
-a<b; //F
-a == b; //F
-a ===b; //F
-
+function calculateResult(){
+    try{
+        let result = eval(document.getElementById('display').value);
+        document.getElementById('display').value = result;
+    } catch (error) {
+        alert('Expresión inválida');
+    }
+}
